@@ -1,0 +1,2 @@
+class DisneyMovie < ApplicationRecord
+end
