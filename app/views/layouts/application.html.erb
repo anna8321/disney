@@ -12,4 +12,32 @@
   <body>
     <%= yield %>
   </body>
+
+  <script>
+    // var j = document.getElementById('movie')
+
+    // function showHide() {
+    // alert("Hello! I am an alert box!!");
+    //     if (movie.style.display === 'none') {
+    //         movie.style.display = 'block';
+    //     } else {
+    //         movie.style.display = 'none';
+    //     }
+    //   }
+
+    const showHide = () => {
+      const cache = document.querySelector('.hidden')
+      const vu = document.querySelector('.looney')
+      const dropdown = document.querySelector('.looney_card')
+      dropdown.addEventListener("click", (event) => {
+        if (event) {
+          event.currentTarget.classList.toggle('looney')
+        } else {
+          event.currentTarget.classList.toggle('hidden')
+          alert("hello");
+        }
+      });
+    }
+
+  </script>
 </html>
