@@ -1,0 +1,15 @@
+<h1> Les films disney </h1>
+<%# objectif : afficher la liste des films
+faire une boucle d'itération sur chaque film afin de montrer description au clic
+dans la partie, js : evenement au clic, dérouler la description
+%>
+<div class="card">
+  <% @disneymovies.each do |movie|%>
+    <div class="card-category">
+      <%= link_to disneymovie_path(movie), class:'' do %> <!-- ou (@disneymovies) -->
+        <%= movie.title %>
+      <% end %>
+      <%= movie.overview %>
+    </div>
+  <% end %>
+</div>

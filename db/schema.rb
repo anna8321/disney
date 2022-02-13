@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_164943) do
+ActiveRecord::Schema.define(version: 2022_02_13_145816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2022_01_06_164943) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "disney_movies_id", null: false
+    t.index ["disney_movies_id"], name: "index_disney_characters_on_disney_movies_id"
   end
 
   create_table "disney_movies", force: :cascade do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_164943) do
     t.index ["disney_movie_id"], name: "index_list_movies_on_disney_movie_id"
   end
 
+  add_foreign_key "disney_characters", "disney_movies", column: "disney_movies_id"
   add_foreign_key "list_movies", "disney_characters"
   add_foreign_key "list_movies", "disney_movies"
 end
