@@ -1,43 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Disney</title>
+    <title>Pokétunes</title>
+    <link href="https://upload.wikimedia.org/wikipedia/fr/thumb/6/6d/Looney_Tunes_Logo.png/330px-Looney_Tunes_Logo.png" rel="shortcut icon" type="text/css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <%= yield %>
   </body>
-
-  <script>
-    // var j = document.getElementById('movie')
-
-    // function showHide() {
-    // alert("Hello! I am an alert box!!");
-    //     if (movie.style.display === 'none') {
-    //         movie.style.display = 'block';
-    //     } else {
-    //         movie.style.display = 'none';
-    //     }
-    //   }
-
-    const showHide = () => {
-      const cache = document.querySelector('.hidden')
-      const vu = document.querySelector('.looney')
-      const dropdown = document.querySelector('.looney_card')
-      dropdown.addEventListener("click", (event) => {
-        if (event) {
-          event.currentTarget.classList.toggle('looney')
-        } else {
-          event.currentTarget.classList.toggle('hidden')
-          alert("hello");
-        }
-      });
-    }
-
-  </script>
 </html>

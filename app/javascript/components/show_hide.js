@@ -1,28 +1,12 @@
-//  visible = document.querySelector('.visible')
-
-// visible.forEach((element) => {
-//   element.addEventListener('click', (event) => {
-//     // event.currentTarget.classList.toggle('mi');
-//     console.log('yooo');
-//   });
-// });
-
-
-
-
-// function showHide(movie) {
-//     if (movie.style.display === 'none') {
-//       movie.style.display = 'block';
-//     } else {
-//       movie.style.display = 'none';
-//     }
-//   }
-// }
-
-// var movie = document.getElementById('movie').forEach((movie) => {
-//   movie.addEventListener("click", (event) => {
-//     event.currentTarget.classList.toggle('movie');
-//   });
-// });
-
-// export { showHide };
+const showHide = () => {
+  console.log('choucroute');
+  let cards = document.querySelectorAll('.card-category');
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    let cardToggle = function () {
+      this.classList.toggle('active');
+    };
+    card.addEventListener('click', cardToggle);
+  };
+};
+export {showHide};

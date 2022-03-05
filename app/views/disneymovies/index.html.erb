@@ -1,29 +1,21 @@
-<h1> Les films disney </h1>
-<%# objectif : afficher la liste des films
-faire une boucle d'itération sur chaque film afin de montrer description au clic
-dans la partie, js : evenement au clic, dérouler la description
-%>
+
 <div class="card">
   <% @disneymovies.each do |movie|%>
-    <div class="card-category looney_card" onclick="showHide()">
-
-      <div class="visible" >
-        <p>🔘</p>
-        <%= link_to disneymovie_path(movie), class:'link_to_movie' do %> <!-- ou (@disneymovies) -->
-          <div class="name">
-            <%= movie.title %>
-          </div>
-        <% end %>
+    <div class="card-category">
+      <div class="toggle">
+        <span>▶</span><h2><%= movie.title %></h2>
       </div>
-
-      <div class="hidden" id="movie">
-        <div class="name">
+      <div class="hidden">
+        <div class="picture">
           <%= image_tag(url_for(movie.movie_url), class:'movie_image') %>
         </div>
-        <div class="name">
-          <%= movie.overview %>
+        <div class="description">
+          <p class="overview"><%= movie.overview %></p>
         </div>
       </div>
     </div>
   <% end %>
+
+
+
 </div>
